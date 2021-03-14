@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+    
     //relacion 1 a 1 con Description.php
     public function description()
     {

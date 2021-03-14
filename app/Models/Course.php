@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
-    
+    protected $guarded = ['id', 'status'];
+
+
     const BORRADOR = 1;
     const REVISION = 2;
     const PUBLICADO = 3;

@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Audience extends Model
 {
     use HasFactory;
+ 
+    protected $guarded = ['id'];
+ 
+ 
     //relacion 1 a muchos inversa con Course.php
     public function course()
     {

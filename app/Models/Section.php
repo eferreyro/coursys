@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Section extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+    
     //relacion 1 a muchos con Lesson.php
     public function lessons()
     {

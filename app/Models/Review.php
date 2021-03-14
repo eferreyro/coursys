@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     use HasFactory;
-
+    protected $guarded = ['id'];
+    
     //relacion 1 a muchos inversa con User.php 
     public function user()
     {

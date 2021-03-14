@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Description extends Model
 {
     use HasFactory;
+    //relacion 1 a 1 Inersa con Lesson.php
+    public function lessons()
+    {
+        return $this->belongsTo('App\Models\Lesson');
+    }
 }

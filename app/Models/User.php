@@ -92,4 +92,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('All\Models\Course');
     }
+    //Relacion muchos a muchos con Course.php
+    public function lessons()
+    {
+        return $this->belongsToMany('All\Models\Lesson');
+    }
 }

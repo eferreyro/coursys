@@ -28,11 +28,11 @@ class CourseSeeder extends Seeder
                 'imageable_id' => $course->id,
                 'imageable_type' => 'App\Models\Course'
             ]);
-
+/*
             Requirement::factory(4)->create([
                 'course_id' => $course->id
             ]);
-
+ 
             Goal::factory(4)->create([
                 'course_id' => $course->id
             ]);
@@ -47,9 +47,9 @@ class CourseSeeder extends Seeder
                 $lessons = Lesson::factory(4)->create(['section_id' => $section->id]);
 
                 foreach ($lessons as $lesson) {
-                    Description::factory(1)->create(['lesson_id' => $lesson->id]);
-                }
-            }
+                    Description::factory(1)->create(['lesson_id' => $lesson->id]); */
+         /*        }
+            } */
         }
     }
 }

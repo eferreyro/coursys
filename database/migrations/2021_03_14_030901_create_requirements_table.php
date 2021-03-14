@@ -22,7 +22,7 @@ class CreateRequirementsTable extends Migration
 
             //Restricciones de llave foraneas
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
-        
+
             $table->timestamps();
         });
     }

@@ -24,7 +24,7 @@ class CreateProfilesTable extends Migration
 
             //Generacion de referencias de llave foraneas
             $table->unsignedBigInteger('user_id');
- 
+
             //Restricciones de llave foraneas
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         

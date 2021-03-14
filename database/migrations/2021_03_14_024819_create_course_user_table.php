@@ -19,7 +19,7 @@ class CreateCourseUserTable extends Migration
             //Generacion de referencias de llave foraneas
             $table->unsignedBigInteger('course_id');
             $table->unsignedBigInteger('user_id');
-           
+
 
             //Restricciones de llave foraneas
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');

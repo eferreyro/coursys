@@ -15,8 +15,10 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+
             $table->text('comment');
             $table->integer('rating');
+
 
             //Generacion de referencias de llave foraneas
             $table->unsignedBigInteger('user_id');

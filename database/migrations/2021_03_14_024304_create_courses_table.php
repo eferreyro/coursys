@@ -22,7 +22,6 @@ class CreateCoursesTable extends Migration
             $table->text('description');
             $table->enum('status', [Course::BORRADOR, Course::REVISION, Course::PUBLICADO])->default(Course::BORRADOR);
             $table->string('slug');
-
             //Generacion de referencias de llave foraneas
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('level_id')->nullable();
@@ -30,11 +29,12 @@ class CreateCoursesTable extends Migration
             $table->unsignedBigInteger('price_id')->nullable();
 
             //Restricciones de llave foraneas
+
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('level_id')->references('id')->on('levels')->onDelete('set null');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
             $table->foreign('price_id')->references('id')->on('prices')->onDelete('set null');
-            
+
 
 
             $table->timestamps();

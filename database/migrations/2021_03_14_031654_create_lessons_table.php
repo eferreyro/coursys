@@ -20,13 +20,15 @@ class CreateLessonsTable extends Migration
             $table->string('iframe');
 
             //Generacion de referencias de llave foraneas
+
             $table->unsignedBigInteger('platform_id')->nullable();
             $table->unsignedBigInteger('section_id');
+
 
             //Restricciones de llave foraneas
             $table->foreign('platform_id')->references('id')->on('platforms')->onDelete('set null');
             $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
-        
+
             $table->timestamps();
         });
     }

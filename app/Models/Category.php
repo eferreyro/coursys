@@ -12,7 +12,7 @@ class Category extends Model
 
 
     //relacion 1 a muchos inversa con Course.php 
-    public function course()
+    public function courses()
     {
         return $this->hasMany('App\Models\Course');
     }

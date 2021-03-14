@@ -9,7 +9,7 @@ class Lesson extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    
+
     //relacion 1 a 1 con Description.php
     public function description()
     {
@@ -21,8 +21,9 @@ class Lesson extends Model
     {
         return $this->belongsTo('App\Models\Section');
     }
+
     //relacion 1 a muchos inversa con Platform.php
-    public function platforms()
+    public function platform()
     {
         return $this->belongsTo('App\Models\Platform');
     }
@@ -34,10 +35,12 @@ class Lesson extends Model
 
 
     //Realcion 1 a 1 polimorfica con Resources
-    public function resource(){
+    public function resource()
+    {
         return $this->morphOne('App\Models\Resource', 'resourceable');
     }
     //Realcion 1 a Muchos polimorfica con Comments
+   
     public function comments()
     {
         return $this->morphMany('App\Models\Comment', 'commentable');

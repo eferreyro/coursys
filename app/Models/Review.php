@@ -9,7 +9,7 @@ class Review extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    
+
     //relacion 1 a muchos inversa con User.php 
     public function user()
     {
@@ -20,5 +20,4 @@ class Review extends Model
     {
         return $this->belongsTo('App\Models\Course');
     }
-    
 }

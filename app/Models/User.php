@@ -66,7 +66,7 @@ class User extends Authenticatable
     //Relacion 1 a 1 con Profile.php
     public function profile()
     {
-        return $this->hasOne('All\Models\Profile');
+        return $this->hasOne('App\Models\Profile');
     }
 
     /*===============================
@@ -75,24 +75,24 @@ class User extends Authenticatable
     //Relacion 1 a muchos con Course.php
     public function courses_dictated()
     {
-        return $this->hasMany('All\Models\Course');
+        return $this->hasMany('App\Models\Course');
     }
 
     //Relacion 1 a muchos con Review.php
     public function reviews()
     {
-        return $this->hasMany('All\Models\Review');
+        return $this->hasMany('App\Models\Review');
     }
 
     //Relacion 1 a muchos con Comment.php
     public function comments()
     {
-        return $this->hasMany('All\Models\Comment');
+        return $this->hasMany('App\Models\Comment');
     }
     //Relacion 1 a muchos con Reaction.php
     public function reactions()
     {
-        return $this->hasMany('All\Models\Reaction');
+        return $this->hasMany('App\Models\Reaction');
     }
 
     /*===============================
@@ -101,11 +101,11 @@ class User extends Authenticatable
     //Relacion muchos a muchos con Course.php
     public function courses_enrolled()
     {
-        return $this->belongsToMany('All\Models\Course');
+        return $this->belongsToMany('App\Models\Course');
     }
     //Relacion muchos a muchos con Course.php
     public function lessons()
     {
-        return $this->belongsToMany('All\Models\Lesson');
+        return $this->belongsToMany('App\Models\Lesson');
     }
 }

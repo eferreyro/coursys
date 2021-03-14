@@ -9,7 +9,7 @@ class Section extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    
+
     //relacion 1 a muchos con Lesson.php
     public function lessons()
     {
@@ -20,6 +20,5 @@ class Section extends Model
     {
         return $this->belongsTo('App\Models\Course');
     }
-
 
 }

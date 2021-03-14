@@ -28,9 +28,9 @@ class Comment extends Model
         return $this->morphMany('App\Models\Comment', 'commentable');
     }
 
-    //Realcion 1 a Muchos polimorfica con Reactions
+      //Realcion 1 a Muchos polimorfica con Reactions
     public function reactions()
-    {
+    { 
         return $this->morphMany('App\Models\Reaction', 'reactionable');
     }
 }

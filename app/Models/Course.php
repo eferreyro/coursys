@@ -43,9 +43,9 @@ RELACIONES UNO A MUCHOS
         return $this->hasMany('App\Models\Section');
     }
 
-/* ====================
-RELACIONES UNO A MUCHOS INVERSAS
-=======================*/
+    /* ====================
+    RELACIONES UNO A MUCHOS INVERSAS
+    =======================*/
     //relacion 1 a muchos inversa con User.pgp (teacher)
     public function user()
     {
@@ -67,14 +67,32 @@ RELACIONES UNO A MUCHOS INVERSAS
     {
         return $this->hasMany('App\Models\Price');
     }
-/* ====================
-RELACIONES MUCHOS A MUCHOS
-=======================*/
+    /* ====================
+    RELACIONES MUCHOS A MUCHOS
+    =======================*/
     //relacion muchos a muchos con User.pgp (student)
     public function users()
     {
         return $this->belongsToMany('App\Models\User');
     }
 
+
+    /* ====================
+    RELACIONES UNO A UNO POLIMORFICA
+    =======================*/
+    //relacion muchos a muchos con Image.php 
+    public function image()
+    {
+        return $this->morphOne('App\Models\Image', 'immgeable');
+    }
+
+    /* ====================
+    RELACIONES HAS MANY TROUGH
+    =======================*/
+    //relacion muchos a muchos de Secciones con Lecciones 
+    public function lessons()
+    {
+        return $this->hasManyThrough('App\Models\Lesson', 'App\Models\Section');
+    }
 
 }

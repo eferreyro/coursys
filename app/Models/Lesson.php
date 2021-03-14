@@ -30,4 +30,22 @@ class Lesson extends Model
         return $this->belongsToMany('App\Models\User');
     }
 
+
+    //Realcion 1 a 1 polimorfica con Resources
+    public function resource(){
+        return $this->morphOne('App\Models\Resource', 'resourceable');
+    }
+    //Realcion 1 a Muchos polimorfica con Comments
+    public function comments()
+    {
+        return $this->morphMany('App\Models\Comment', 'commentable');
+    }
+
+    //Realcion 1 a Muchos polimorfica con Reactions
+    public function reactions()
+    {
+        return $this->morphMany('App\Models\Reaction', 'reactionable');
+    }
+
+
 }
